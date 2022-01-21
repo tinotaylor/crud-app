@@ -1,5 +1,5 @@
 //REACT HOOKS & LIBRARIES ----------------------------------------------------------------
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { updatingBookContext } from "../helpers/Context";
 import axios from "axios";
 
@@ -86,7 +86,7 @@ export default function Home() {
   const [newImage, setNewImage] = useState("");
 
   // NOTE: FIREBASE CODE STARTS HERE
-  // 1. GET ALL BOOKS FROM FIREBASE AND MAP THEM OUT ✅
+  // 1. GET ALL BOOKS FROM FIREBASE AND MAP THEM OUT 
   useEffect(() => {
     const ref = collection(db, "books");
     const getBooks = onSnapshot(ref, (snapshot) => {
@@ -100,7 +100,7 @@ export default function Home() {
     return () => getBooks();
   }, []);
 
-  // 2. CREATE A ADD BOOK FUNCTION IN OTHER COMPONENT THAT WILL TRIGGER ONCLICK ✅
+  // 2. CREATE A ADD BOOK FUNCTION IN OTHER COMPONENT THAT WILL TRIGGER ONCLICK
   const addBook = async (e) => {
     e.preventDefault();
     await addDoc(collection(db, "books"), {

@@ -17,7 +17,7 @@ function UpdateForm({ resetBookId, updateBook }) {
     isUpdating,
     setIsUpdating,
   } = useContext(updatingBookContext);
-  
+
   return (
     <Transition.Root show={isUpdating} as={Fragment}>
       {/* NOTE: isUPDATING IS REQUIRED TO KNOW WHEN THE MODAL SHOULD OPEN */}
